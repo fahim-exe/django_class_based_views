@@ -21,8 +21,15 @@ class ContactFormView(FormView):
     template_name = "classroom/contact.html"
 
     #this is not a template.html
-    success_url = "classroom/thankyou"
+    success_url = "/classroom/thank_you/"
 
     #success url
     #what to do with form?
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+
+        #form.save
+        return super().form_valid(form)
+    
 
